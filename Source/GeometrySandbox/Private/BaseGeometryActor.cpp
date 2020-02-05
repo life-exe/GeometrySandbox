@@ -1,6 +1,5 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "BaseGeometryActor.h"
 #include "Engine/Engine.h"
 #include "Materials/MaterialInstanceDynamic.h"
@@ -50,10 +49,13 @@ void ABaseGeometryActor::HandleMovement()
         {
             // z = z0 + amplitude * sin(freq * t);
             FVector CurrentLocation = GetActorLocation();
-            float Time = GetWorld()->GetTimeSeconds();
-            CurrentLocation.Z = InitialLocation.Z + GeometryData.Amplitude * FMath::Sin(GeometryData.Frequency * Time);
+            if (GetWorld())
+            {
+                float Time = GetWorld()->GetTimeSeconds();
+                CurrentLocation.Z = InitialLocation.Z + GeometryData.Amplitude * FMath::Sin(GeometryData.Frequency * Time);
 
-            SetActorLocation(CurrentLocation);
+                SetActorLocation(CurrentLocation);
+            }
         }
         break;
 
@@ -83,8 +85,11 @@ void ABaseGeometryActor::PrintStringTypes()
     FString Stat = FString::Printf(TEXT(" \n == All Stat == \n %s \n %s \n %s "), *WeaponsNumStr, *HealthStr, *IsDeadStr);
     UE_LOG(LogBaseGeometry, Warning, TEXT("%s"), *Stat);
 
-    GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, Name);
-    GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, Stat, true, FVector2D(1.5f, 1.5f));
+    if (GEngine)
+    {
+        GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, Name);
+        GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, Stat, true, FVector2D(1.5f, 1.5f));
+    }
 }
 
 void ABaseGeometryActor::PrintTransform()
@@ -105,6 +110,7 @@ void ABaseGeometryActor::PrintTransform()
 
 void ABaseGeometryActor::SetColor(const FLinearColor& Color)
 {
+    if (!BaseMesh) return;
     UMaterialInstanceDynamic* DynMaterial = BaseMesh->CreateAndSetMaterialInstanceDynamic(0);
     if (DynMaterial)
     {
