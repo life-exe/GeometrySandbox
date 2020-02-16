@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Geometry Sandbox, All Rights Reserved.
 
 #pragma once
 
@@ -44,7 +44,6 @@ class GEOMETRYSANDBOX_API ABaseGeometryActor : public AActor
     GENERATED_BODY()
 
 public:
-    // Sets default values for this actor's properties
     ABaseGeometryActor();
 
     UPROPERTY(VisibleAnywhere)
@@ -61,7 +60,6 @@ public:
     FOnTimerFinished OnTimerFinished;
 
 protected:
-    // Called when the game starts or when spawned
     virtual void BeginPlay() override;
 
     virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
@@ -85,7 +83,6 @@ protected:
     bool HasWeapon = true;
 
 public:
-    // Called every frame
     virtual void Tick(float DeltaTime) override;
 
 private:

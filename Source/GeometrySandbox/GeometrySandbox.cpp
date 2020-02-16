@@ -1,4 +1,4 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+// Geometry Sandbox, All Rights Reserved.
 
 #include "GeometrySandbox.h"
 #include "Modules/ModuleManager.h"
