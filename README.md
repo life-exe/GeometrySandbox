@@ -3,6 +3,11 @@
 Исходники проекта **«Geometry Sandbox»**  
 Введение курса **«Unreal Engine — Полное руководство по разработке на С++»**  
 
+Команда клонирования репозитория:
+```python
+git clone https://github.com/life-exe/GeometrySandbox.git
+```
+
 [Wiki](https://lifeexe-art.gitbook.io/unreal-engine-c-course/)
 
 ## Темы
