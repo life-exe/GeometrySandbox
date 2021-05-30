@@ -83,7 +83,7 @@ void AGeometryHubActor::DoActorSpawn3()
 
 void AGeometryHubActor::DoActorSpawn4()
 {
-    if(!GetWorld()) return;
+    if (!GetWorld()) return;
 
     FTransform GeometryTransform = FTransform(FRotator::ZeroRotator, FVector(700.0f, 300.0f, 300.0f));
     NonePropertyActor = GetWorld()->SpawnActor<ABaseGeometryActor>(GeometryClass, GeometryTransform);
