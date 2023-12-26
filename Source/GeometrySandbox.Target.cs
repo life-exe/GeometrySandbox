@@ -9,6 +9,8 @@ public class GeometrySandboxTarget : TargetRules
     {
         Type = TargetType.Game;
         DefaultBuildSettings = BuildSettingsVersion.V2;
+        IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
+        DefaultBuildSettings = BuildSettingsVersion.Latest;
 
         ExtraModuleNames.AddRange(new string[] { "GeometrySandbox" });
     }
