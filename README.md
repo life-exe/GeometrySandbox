@@ -12,6 +12,10 @@ git clone https://github.com/life-exe/GeometrySandbox.git
 ```python
 git clone -b 5.3 --single-branch https://github.com/life-exe/GeometrySandbox.git
 ```
+Код совместимый с 5.4 версией в отдельной ветке:
+```python
+git clone -b 5.4 --single-branch https://github.com/life-exe/GeometrySandbox.git
+```
 
 [Wiki](https://lifeexe-art.gitbook.io/unreal-engine-c-course/)
 
