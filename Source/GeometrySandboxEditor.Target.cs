@@ -8,7 +8,7 @@ public class GeometrySandboxEditorTarget : TargetRules
     public GeometrySandboxEditorTarget(TargetInfo Target) : base(Target)
     {
         Type = TargetType.Editor;
-        DefaultBuildSettings = BuildSettingsVersion.V2;
+        DefaultBuildSettings = BuildSettingsVersion.V7;
 
         ExtraModuleNames.AddRange(new string[] { "GeometrySandbox" });
     }
